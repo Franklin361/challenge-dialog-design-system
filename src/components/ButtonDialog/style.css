@@ -1,0 +1,45 @@
+.btn {
+    --button_radius: 0.75em;
+    --button_outline_color: #000000;
+    background: var(--button_outline_color);
+    border-radius: var(--button_radius);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.button_top {
+    border-radius: var(--button_radius);
+    background-color: #f2f2f2;
+    border: 2px solid var(--button_outline_color);
+    color: var(--button_outline_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.75em 1.5em;
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+.button_top .btn-icon {
+    font-size: 1.5em;
+}
+.btn.success .button_top .btn-icon {
+    color: #02b302;
+}
+.btn.warning .button_top .btn-icon {
+    color: #b0b302;
+}
+.btn.error .button_top .btn-icon {
+    color: #b30202;
+}
+
+.btn:hover .button_top {
+    transform: translateY(-0.33em);
+}
+
+.btn:active .button_top {
+    transform: translateY(0);
+}

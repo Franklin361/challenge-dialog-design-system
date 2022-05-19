@@ -1,0 +1,9 @@
+.container-btns{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em auto;
+    max-width: 900px;
+    padding: 1.5em;
+
+}
