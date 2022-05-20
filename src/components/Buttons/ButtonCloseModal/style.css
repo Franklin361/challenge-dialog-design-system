@@ -1,17 +1,17 @@
 .btn-closeModal {
-    all: unset;
-    width: 44px;
-    height: 44px;
-    background-color: #6E41E2;
-    color: white;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    all: unset;
+    background-color: #6E41E2;
+    border-radius: 100px;
+    color: white;
     cursor: pointer;
+    display: flex;
     font-size: 1em;
     font-weight: bold;
+    height: 44px;
+    justify-content: center;
     position: absolute;
-    top: 12px;
     right: 12px;
+    top: 12px;
+    width: 44px;
 }

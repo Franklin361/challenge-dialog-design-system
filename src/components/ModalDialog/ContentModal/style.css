@@ -1,13 +1,12 @@
 
 .icon-container {
-    display: flex;
-    justify-content: center;
     align-items: center;
     border-radius: 100px;
+    display: flex;
+    height: 96px;
+    justify-content: center;
     margin: 0 auto 20px auto;
     width: 96px;
-    height: 96px;
-
 }
 
 .icon-container.error {
@@ -24,8 +23,8 @@
 
 .title-modal {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
     font-size: 32px;
+    font-weight: 700;
     line-height: 40px;
     margin: 0 0 8px 0;
 }

@@ -1,51 +1,51 @@
 
 .btn-primary{
-    outline: none;
-    border: none;
     background-color: #6E41E2;
+    border: none;
     color: white;
+    outline: none;
 }
 
 .btn-success,
 .btn-delete,
 .btn-cancel {
-    height: 44px;
-    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
     font-size: 16px;
+    font-weight: 400;
+    height: 44px;
     line-height: 24px;
+    padding: 10px 20px;
 }
 
 .btn-success {
-    width: 145px;
     margin: 34px 0 0 0;
+    width: 145px;
 }
 .btn-delete {
     width: 84px;
 }
 .btn-cancel {
-    width: 103px;
+    background: transparent;
     border: 2px solid #6E41E2;
     color: #6E41E2;
-    background: transparent;
+    width: 103px;
 }
 
 .btn-container {
-    margin: 34px 0 0 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     gap: 10px;
+    justify-content: center;
+    margin: 34px 0 0 0;
 }
 
 .msg-delete{
-    position: absolute;
+    animation: translate-Up .3s cubic-bezier(0.39, 0.575, 0.565, 1);
     bottom: -45px;
     font-weight: bold;
-    animation: translate-Up .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    position: absolute;
 }
 
 @keyframes translate-Up {
