@@ -1,0 +1,1 @@
+export type NameIcon = "warning" | "success" | "error";

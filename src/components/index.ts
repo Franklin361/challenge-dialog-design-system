@@ -1,2 +1,5 @@
-export { ButtonDialog } from './ButtonDialog'
 export { Icon } from './Icons'
+export { ButtonDialog, ButtonCloseModal } from './Buttons'
+export { ModalDialog } from './ModalDialog'
+export { ContentModal } from './ModalDialog/ContentModal'
+export { ErrorModal, SuccessModal, WarningModal } from './ModalDialog/TypeModals'

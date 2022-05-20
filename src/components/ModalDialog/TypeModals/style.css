@@ -1,0 +1,61 @@
+
+.btn-primary{
+    outline: none;
+    border: none;
+    background-color: #6E41E2;
+    color: white;
+}
+
+.btn-success,
+.btn-delete,
+.btn-cancel {
+    height: 44px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.btn-success {
+    width: 145px;
+    margin: 34px 0 0 0;
+}
+.btn-delete {
+    width: 84px;
+}
+.btn-cancel {
+    width: 103px;
+    border: 2px solid #6E41E2;
+    color: #6E41E2;
+    background: transparent;
+}
+
+.btn-container {
+    margin: 34px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.msg-delete{
+    position: absolute;
+    bottom: -45px;
+    font-weight: bold;
+    animation: translate-Up .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@keyframes translate-Up {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

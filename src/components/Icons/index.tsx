@@ -1,14 +1,13 @@
 import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineWarning } from "react-icons/ai";
 import { IconBaseProps } from "react-icons";
 
+import { NameIcon } from "../../interfaces";
 
-export type NameIcon = "warning" | "success" | "error";
-
-export interface IPropsIcon extends IconBaseProps {
+export interface PropsIcon extends IconBaseProps {
     name: NameIcon;
 }
 
-export const Icon = ({name, ...props} : IPropsIcon) => {
+export const Icon = ({name, ...props} : PropsIcon) => {
 
     const selectedIcon = {
         "warning": <AiOutlineWarning {...props}/>,
