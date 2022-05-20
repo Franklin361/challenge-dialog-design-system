@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom";
 
 import { Modal } from "./Modal";
 import { PropsModal } from '../../interfaces';
@@ -10,7 +10,7 @@ export const ModalDialog = (props: PropsModal) => {
     return (
         ReactDOM.createPortal(
             <Modal {...props}/>,
-            document.getElementById("modal")!
+            document.body
         )
     )
 };

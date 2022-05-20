@@ -23,7 +23,9 @@ export const HomePage = () => {
                 }
             </div>
 
-            <ModalDialog {...{ handleCloseModal, isOpenModal, type }} />
+            {
+                isOpenModal && <ModalDialog {...{ handleCloseModal, isOpenModal, type }} />
+            }
 
         </main>
     )

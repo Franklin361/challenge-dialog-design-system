@@ -14,7 +14,7 @@ export const SuccessModal = ({ handleCloseModal, type }: PropsModal) => {
                 src={successImg} 
                 alt={type!} 
                 className="icon-container success"
-                title='!Vamos!'
+                title='¡Vamos!'
                 desc='Todo ha salido bien:)'
             />
             <button

@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "test": "jest"
+    "test": "jest --verbose --silent --detectOpenHandles --watch"
   },
   "dependencies": {
     "react": "^17.0.0",
