@@ -1,38 +1,125 @@
-# PROJECT NAME
+# Show Modal Dialogs 💬
 
-Project_name: utilizar nombres que sean facilmente identificables para personas que puedan llegar a tener interés en ese modulo o que estén buscando algo similar.
+Este proyecto consta de mostrar modales de dialogo basado en componentes de React JS.
 
-> Breve descripción del proyecto, más o menos 15 - 20 palabras: 
-Define la uilidad básica del modulo para que easí la gente que tenía dudas respecto al título pueda salir de ellas y decidir si seguir leyendo.
-
-**Badges (opcional)** 
-En algunos archivos READMEs, es posible que hayas visto pequeñas imágenes que transmiten metadatos, como si todas las pruebas están pasando o no para el proyecto. Puedes usar [Shields](http://shields.io/) para agregar algunos a tu README. Muchos servicios también tienen instrucciones para agregar una insignia. 
-
-
-## Usage
-Antes de comenzar a profundizar en los documentos de la API/Componente, sería genial ver cómo se ve el módulo en acción. Así puedo determinar rápidamente si el JS de ejemplo se ajusta al estilo y al problema deseados. La gente tiene muchas opiniones sobre cosas como promesas / devoluciones de llamada y ES6. Si se ajusta a los requisitos, entonces puedo proceder con más detalles.
+![image](https://res.cloudinary.com/dnxchppfm/image/upload/v1653078455/2022-05-20_15-19-34_krxmqy.gif)
 
 ## API/Component
 
-El nombre, la descripción y el uso de este módulo me parecen atractivos. Es muy probable que utilice este módulo en este momento. Solo necesito escanear la API para asegurarme de que haga exactamente lo que necesito y que se integre fácilmente en mi base de código. 
+HomePage/index.tsx
 
-La sección de API debe detallar los objetos y funciones del módulo, sus firmas, tipos de devolución, devoluciones de llamada y eventos en detalle. Los tipos deben incluirse donde no sean obvios. Deben dejarse claras las advertencias.
+```javascript
+<main>
+    <div className="container-btns">
+        {
+            buttons.map( ({ icon, label }) => (
+                <ButtonDialog
+                    key={icon}
+                    onClick={() => handleOpenModal(icon)}
+                    label={label}
+                    icon={icon}
+                />
+            ))
+        }
+    </div>
+
+    {
+        isOpenModal && <ModalDialog {...{ handleCloseModal, isOpenModal, type }} />
+    }
+</main>
+```
+
+En el componente HomePage contiene los botones para desplegar los modales de dialogo.\
+El arreglo de "buttons" consiste en varios objetos con la como el siguiente:
+
+ ```javascript
+    const buttons: Pick<PropsButton, 'icon' | 'label'>[] = [
+        {
+            icon: 'warning',
+            label: 'Warning Dialog'
+        },
+        {
+            icon: 'error',
+            label: 'Error Dialog'
+        },
+        {
+            icon: 'success',
+            label: 'Success Dialog'
+        }
+    ]
+ ```
+Y para cada botón, hay un modal que se idenfica mediante el valor de la propiedad "icono" de la constante "buttons".
+
+---
+components/ModalDialog/Modal.tsx
+```javascript
+export const Modal = (props: PropsModal) => {
+
+    const { isOpenModal, handleCloseModal } = props;
+
+    return (
+        <dialog 
+            open={isOpenModal} 
+            className='modal-overlay' 
+            onClick={handleCloseModal}
+        >
+            <div 
+                className='modal-container' 
+                onClick={handleStopPropagation}
+            >
+                { showModalDetails(props) }
+                
+                <ButtonCloseModal handleCloseModal={handleCloseModal} />
+            </div>
+        </dialog>
+    )
+}
+
+```
+
+---
+utils/showModalDetails.tsx
+```javascript
+export const showModalDetails = (props: PropsModal) => {
+
+    const selectedModal = {
+        "warning": <WarningModal {...props} />,
+        "success": <SuccessModal {...props} />,
+        "error": <ErrorModal {...props} />
+    }
+
+    return selectedModal[props.type!]
+}
+```
+
 
 ## Installation
 
-Dentro de un ecosistema en particular, puede haber una forma común de instalar cosas, como usar Yarn, NuGet o Homebrew. Sin embargo, considere la posibilidad de que quien esté leyendo su archivo README sea un novato y desee más orientación. Enumerar los pasos específicos ayuda a eliminar la ambigüedad y hace que las personas usen su proyecto lo más rápido posible. Si solo se ejecuta en un contexto específico, como una versión de lenguaje de programación o un sistema operativo en particular, o tiene dependencias que deben instalarse manualmente, agregue también una subsección de Requisitos.
-
-
-```shell
-    # Clone or install commands
-    npm i [project] o npm/yarn i 
-```
+1. Clone the repository (you need to have [Git](https://git-scm.com) installed).
 
 ```shell
-    # test o run commands
-    npm start
-    npm run dev ...
+    git clone https://github.com/Franklin361/challenge-dialog-design-system.git
 ```
+
+2.  Install dependencies of the project.
+
+```shell
+    npm install
+```
+
+3. Run the project.
+```shell
+    npm run dev
+```
+
+Note: For running the tests, use the following command 
+
+```shell
+    npm run test
+```
+
+## Demo
+[Demo de la aplicación](https://show-modal-dialogs.netlify.app/)
 
 ## License 
 
